@@ -1,0 +1,35 @@
+$fw-xlight: 200;
+$fw-light: 300;
+$fw-reg: 400;
+$fw-med: 500;
+$fw-bold: 600;
+
+@font-face {
+  font-family: 'Operator Mono';
+  src: url('/fonts/OperatorMono-XLight.otf');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Operator Mono';
+  src: url('/fonts/OperatorMono-Light.otf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Operator Mono';
+  src: url('/fonts/OperatorMono-Book.otf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Operator Mono';
+  src: url('/fonts/OperatorMono-Medium.otf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Operator Mono';
+  src: url('/fonts/OperatorMono-Bold.otf');
+  font-weight: 600;
+}

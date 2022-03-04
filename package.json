@@ -1,0 +1,25 @@
+{
+  "name": "dogapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"sass --watch styles:public\" \"nodemon server.js\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.4",
+    "pug": "^3.0.2",
+    "sass": "^1.49.9"
+  },
+  "devDependencies": {
+    "@prettier/plugin-pug": "^1.19.2",
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
+  }
+}

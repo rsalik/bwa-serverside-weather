@@ -1,0 +1,64 @@
+@import 'fonts';
+@import 'values';
+@import 'forecast';
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: white;
+  background-color: $bkg-color;
+
+  font-family: 'Operator Mono', monospace;
+  font-weight: $fw-xlight;
+}
+
+*:not(body) {
+  transition: all .1s ease-in-out;
+}
+
+.header {
+  font-size: 2em;
+  background: $l1;
+  padding: .4em .6em;
+
+  font-weight: $fw-bold;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.btn {
+  padding: .8em 2em;
+  background: $accent;
+  color: $bkg-color;
+  text-decoration: none;
+  display: inline-block;
+
+  border-radius: $border-radius;
+
+  font-weight: $fw-reg; 
+  font-size: 2em;
+
+  margin: .5em;
+
+  &:hover {
+    background: $accent-dark;
+  }
+}
+
+.section-title {
+  font-size: 3em;
+  font-weight: $fw-bold;
+  margin-top: .5rem;
+
+  text-align: center;
+}
+
+.content {
+  text-align: center;
+}

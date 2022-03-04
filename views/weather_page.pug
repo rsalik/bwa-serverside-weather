@@ -1,0 +1,73 @@
+extends layout
+
+block scripts
+  script(src='/scripts/temperatures.js')
+  script.
+    function displayFahrenheit() {
+      document.querySelector(".high .text").innerHTML = kToF(#{ weather.main.temp_max }) + "&deg;F"
+      document.querySelector(".low .text").innerHTML = kToF(#{ weather.main.temp_min }) + "&deg;F"
+      document.querySelector(".temp .text").innerHTML = kToF(#{ weather.main.temp }) + "&deg;F"
+      document.querySelector(".feels-like .text").innerHTML = kToF(#{ weather.main.feels_like }) + "&deg;F"
+      document.querySelector(".btn.f").style.display = "none"
+      document.querySelector(".btn.c").style.display = "flex"
+    }
+
+    function displayCelcius() {
+      document.querySelector(".high .text").innerHTML = kToC(#{ weather.main.temp_max }) + "&deg;C"
+      document.querySelector(".low .text").innerHTML = kToC(#{ weather.main.temp_min }) + "&deg;C"
+      document.querySelector(".temp .text").innerHTML = kToC(#{ weather.main.temp }) + "&deg;C"
+      document.querySelector(".feels-like .text").innerHTML = kToC(#{ weather.main.feels_like }) + "&deg;C"
+      document.querySelector(".btn.c").style.display = "none"
+      document.querySelector(".btn.f").style.display = "flex"
+    }
+
+    window.onload = displayFahrenheit;
+
+block content
+  .section-title Forecast
+  .floating-btns 
+    .btn.f(onclick='displayFahrenheit()') &deg;C
+    .btn.c(onclick='displayCelcius()') &deg;F
+  .forecast 
+    .coords 
+      .city #{ weather.name }
+      div
+        span.lat Lat #{ weather.coord.lat }
+        span.long Long #{ weather.coord.lon }
+    .main
+      .weather #{ weather.weather[0].main }
+    .card-row
+      .card.high
+        span.material-icons arrow_upward
+        span.text
+        span.label High
+      .card.temp.highlight
+        span.material-icons thermostat
+        span.text 
+        span.label Temperature
+      .card.low
+        span.material-icons arrow_downward
+        span.text 
+        span.label Low
+    .card-row
+      .card.feels-like
+        span.material-icons ac_unit
+        span.text 
+        span.label Feels Like
+      .card.wind-speed
+        span.material-icons air
+        span.text #{ weather.wind.speed }mph
+        span.label Wind Speed
+      .card.humidity
+        span.material-icons water_drop
+        span.text #{ weather.main.humidity }%
+        span.label Humidity
+    .row
+      .line 
+        span.material-icons light_mode
+        span.label Sunrise
+        span.time #{ new Date(1000 * weather.sys.sunrise).toLocaleTimeString() }
+      .line 
+        span.material-icons dark_mode
+        span.label Sunset
+        span.time #{ new Date(1000 * weather.sys.sunset).toLocaleTimeString() }

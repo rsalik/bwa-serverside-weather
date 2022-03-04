@@ -1,0 +1,24 @@
+$bkg-color: #1d1d1d;
+
+$d1: mix($bkg-color, #000, 90%);
+$d2: mix($bkg-color, #000, 80%);
+$d3: mix($bkg-color, #000, 70%);
+$d4: mix($bkg-color, #000, 60%);
+
+$l1: mix($bkg-color, #fff, 98%);
+$l2: mix($bkg-color, #fff, 95%);
+$l3: mix($bkg-color, #fff, 90%);
+$l4: mix($bkg-color, #fff, 82%);
+
+$accent: #39fff5;
+$accent-xdark: mix($bkg-color, $accent, 60%);
+$accent-dark: mix($bkg-color, $accent, 30%);
+$accent-light: mix(#fff, $accent, 30%);
+
+$secondary: #f50a8b;
+$secondary-xdark: mix($bkg-color, $secondary, 60%);
+$secondary-dark: mix($bkg-color, $secondary, 30%);
+$secondary-light: mix(#fff, $secondary, 30%);
+
+$border-radius: 1rem;
+$border-weight: .15rem;
