@@ -1,5 +1,10 @@
 const axios = require('axios');
 const express = require('express');
+
+if (process.env.node_env !== 'PRODUCTION') {
+  require('dotenv').config();
+}
+
 const app = express();
 const port = process.env.PORT || 3000;
 
